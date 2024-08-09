@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+       
+            function imgSelect(event){
+                document.getElementById('imgSelect').innerHTML= "<img src="+event.target.getAttribute('src')+">";
+                let avatar = document.getElementById('hid');
+                avatar.value = event.target.getAttribute('src');
+            }
+            
+        
+    </script>
+</head>
+<body>
+    <Table align="center">
+        <TR>
+        <TD><img src="./avatar/avatar1.jpg" width="45" onclick="imgSelect(event)"></TD>
+        <TD><img src="./avatar/avatar2.jpg" width="45" onclick="imgSelect(event)"></TD>
+        <TD><img src="./avatar/avatar3.jpg" width="45" onclick="imgSelect(event)"></TD>
+        <TD><img src="./avatar/avatar4.jpg" width="45" onclick="imgSelect(event)"></TD>
+        <TD><img src="./avatar/avatar5.jpg" width="45" onclick="imgSelect(event)"></TD>
+        <TD><img src="./avatar/avatar6.jpg" width="45" onclick="imgSelect(event)"></TD>
+        </TR>
+         </Table>
+         <p id="imgSelect">
+            <img src="" >
+         </p>
+         
+    <form action="insert.php" method="post">
+        <p>
+            <input type="hidden" id="hid" name="avatar" value="">
+        <p>
+            FIRSTNAME:<input type="text" size="26" maxlength="30" name="firstname" required>
+        </p>
+        <p>
+            LASTNAME:<input type="text" size="26" maxlength="30" name="lastname"required>
+        </p>
+        <p>
+            AGE:<input type="number" size="16" maxlength="2" name="age"required>
+        </p>
+        <p>
+            GENDER:
+            <select name="gender" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </p>
+    
+        <input type="submit" value="Save" />
+        <input type="reset" value="Cancel" />
+        </p>
+    
+    
+    
+    </form>
+    
+    
+</body>
+</html>
